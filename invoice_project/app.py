@@ -4,6 +4,7 @@ from flask_restx import Api
 def create_app():
 
     from invoice_project.invoice_namespace import invoices_namespace
+    from invoice_project.invoiceItem_namespace import items_namespace
 
     app = Flask(__name__)
 
@@ -16,5 +17,6 @@ def create_app():
     app.db = db
 
     api.add_namespace(invoices_namespace)
+    api.add_namespace(items_namespace)
 
     return app
